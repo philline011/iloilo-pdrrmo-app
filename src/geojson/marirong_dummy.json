@@ -5,7 +5,9 @@
         "type": "Feature",
         "properties": {
           "site": "Marirong",
-          "function": "Hazard Map"
+          "function": "Hazard Map",
+          "site_code": "MAR",
+          "function_code": "HM"
         },
         "geometry": {
           "coordinates": [
@@ -105,8 +107,12 @@
       },
       {
         "type": "Feature",
-        "properties": {"site": "Marirong",
-          "function": "Rain Gauge"},
+        "properties": {
+          "site": "Marirong",
+          "function": "Rain Gauge",
+          "site_code": "MAR",
+          "function_code": "RG"
+        },
         "geometry": {
           "coordinates": [
             122.32242949318038,
@@ -117,8 +123,12 @@
       },
       {
         "type": "Feature",
-        "properties": {"site": "Marirong",
-          "function": "Rain Gauge"},
+        "properties": {
+          "site": "Marirong",
+          "function": "Rain Gauge",
+          "site_code": "MAR",
+          "function_code": "RG"
+        },
         "geometry": {
           "coordinates": [
             122.32164352444187,
@@ -129,8 +139,12 @@
       },
       {
         "type": "Feature",
-        "properties": {"site": "Marirong",
-          "function": "Surficial Marker"},
+        "properties": {
+          "site": "Marirong",
+          "function": "Surficial Marker",
+          "site_code": "MAR",
+          "function_code": "SM"
+        },
         "geometry": {
           "coordinates": [
             [
@@ -147,8 +161,12 @@
       },
       {
         "type": "Feature",
-        "properties": {"site": "Marirong",
-          "function": "Surficial Marker"},
+        "properties": {
+          "site": "Marirong",
+          "function": "Surficial Marker",
+          "site_code": "MAR",
+          "function_code": "SM"
+        },
         "geometry": {
           "coordinates": [
             [
@@ -165,8 +183,12 @@
       },
       {
         "type": "Feature",
-        "properties": {"site": "Marirong",
-          "function": "Subsurface Sensor"},
+        "properties": {
+          "site": "Marirong",
+          "function": "Subsurface Sensor",
+          "site_code": "MAR",
+          "function_code": "SS"
+        },
         "geometry": {
           "coordinates": [
             122.32168750551352,
@@ -177,8 +199,12 @@
       },
       {
         "type": "Feature",
-        "properties": {"site": "Marirong",
-          "function": "Subsurface Sensor"},
+        "properties": {
+          "site": "Marirong",
+          "function": "Subsurface Sensor",
+          "site_code": "MAR",
+          "function_code": "SS"
+        },
         "geometry": {
           "coordinates": [
             122.32242771408795,

@@ -36,6 +36,16 @@ const Sidebar = () => {
   const [open, setOpen] = useState(false);
 
   const [mapType, setMapType] = useState("street");
+  const [sites, setSites] = useState({
+    LPA: true,
+    MAR: true,
+    UMI: true
+  })
+  const [filters, setFilters] = useState({
+    RG: true,
+    SM: true,
+    SS: true
+  })
 
   const handleDrawerOpen = () => {
     // setOpen(true);
@@ -123,7 +133,11 @@ const Sidebar = () => {
           <WidgetsRoundedIcon />
         </Fab>
       </div>
-      <Maps mapType={mapType} />
+      <Maps 
+        mapType={mapType} 
+        sites={sites}
+        filters={filters}
+      />
       {/* </Main> */}
       <Drawer
         sx={{
@@ -150,29 +164,71 @@ const Sidebar = () => {
         <FormGroup>
           <Typography>Sites</Typography>
           <FormControlLabel
-            control={<Checkbox defaultChecked />}
+            control={<Checkbox 
+              defaultChecked
+              onChange={e => {
+                let temp = {...sites}
+                temp.UMI = e.target.checked
+                setSites(temp)
+              }}
+            />}
             label="Umingan"
           />
           <FormControlLabel
-            control={<Checkbox defaultChecked />}
+            control={<Checkbox 
+              defaultChecked
+              onChange={e => {
+                let temp = {...sites}
+                temp.MAR = e.target.checked
+                setSites(temp)
+              }} 
+            />}
             label="Marirong"
           />
           <FormControlLabel
-            control={<Checkbox defaultChecked />}
+            control={<Checkbox 
+              defaultChecked
+              onChange={e => {
+                let temp = {...sites}
+                temp.LPA = e.target.checked
+                setSites(temp)
+              }}
+            />}
             label="Lipata"
           />
           <Divider />
           <Typography>Filters</Typography>
           <FormControlLabel
-            control={<Checkbox defaultChecked />}
+            control={<Checkbox 
+              defaultChecked
+              onChange={e => {
+                let temp = {...filters}
+                temp.RG = e.target.checked
+                setFilters(temp)
+              }}
+            />}
             label="Rain Gauges"
           />
           <FormControlLabel
-            control={<Checkbox defaultChecked />}
+            control={<Checkbox 
+              defaultChecked
+              onChange={e => {
+                let temp = {...filters}
+                temp.SS = e.target.checked
+                setFilters(temp)
+              }}
+            />}
             label="Subsurface Sensors"
           />
           <FormControlLabel
-            control={<Checkbox defaultChecked />}
+            control={<Checkbox 
+              defaultChecked 
+              onChange={e => {
+                let temp = {...filters}
+                temp.SM = e.target.checked
+                setFilters(temp)
+              }}
+            />}
             label="Surficial Markers"
           />
         </FormGroup>
