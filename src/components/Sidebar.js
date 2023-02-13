@@ -162,78 +162,89 @@ const Sidebar = () => {
         </DrawerHeader>
         <Divider />
         <FormGroup>
-          <Typography>Sites</Typography>
-          <FormControlLabel
-            control={<Checkbox 
-              defaultChecked
-              onChange={e => {
-                let temp = {...sites}
-                temp.UMI = e.target.checked
-                setSites(temp)
-              }}
-            />}
-            label="Umingan"
-          />
-          <FormControlLabel
-            control={<Checkbox 
-              defaultChecked
-              onChange={e => {
-                let temp = {...sites}
-                temp.MAR = e.target.checked
-                setSites(temp)
-              }} 
-            />}
-            label="Marirong"
-          />
-          <FormControlLabel
-            control={<Checkbox 
-              defaultChecked
-              onChange={e => {
-                let temp = {...sites}
-                temp.LPA = e.target.checked
-                setSites(temp)
-              }}
-            />}
-            label="Lipata"
-          />
+          <br/>
+          <Box sx={{paddingLeft: '10%'}}>
+            <Typography variant='h5'>Sites</Typography>
+            <FormControlLabel
+              control={<Checkbox 
+                defaultChecked
+                onChange={e => {
+                  let temp = {...sites}
+                  temp.UMI = e.target.checked
+                  setSites(temp)
+                }}
+              />}
+              label="Umingan"
+            />
+            <br/>
+            <FormControlLabel
+              control={<Checkbox 
+                defaultChecked
+                onChange={e => {
+                  let temp = {...sites}
+                  temp.MAR = e.target.checked
+                  setSites(temp)
+                }} 
+              />}
+              label="Marirong"
+            />
+            <br/>
+            <FormControlLabel
+              control={<Checkbox 
+                defaultChecked
+                onChange={e => {
+                  let temp = {...sites}
+                  temp.LPA = e.target.checked
+                  setSites(temp)
+                }}
+              />}
+              label="Lipata"
+            />
+          </Box>
           <Divider />
-          <Typography>Filters</Typography>
-          <FormControlLabel
-            control={<Checkbox 
-              defaultChecked
-              onChange={e => {
-                let temp = {...filters}
-                temp.RG = e.target.checked
-                setFilters(temp)
-              }}
-            />}
-            label="Rain Gauges"
-          />
-          <FormControlLabel
-            control={<Checkbox 
-              defaultChecked
-              onChange={e => {
-                let temp = {...filters}
-                temp.SS = e.target.checked
-                setFilters(temp)
-              }}
-            />}
-            label="Subsurface Sensors"
-          />
-          <FormControlLabel
-            control={<Checkbox 
-              defaultChecked 
-              onChange={e => {
-                let temp = {...filters}
-                temp.SM = e.target.checked
-                setFilters(temp)
-              }}
-            />}
-            label="Surficial Markers"
-          />
+          <br/>
+          <Box sx={{paddingLeft: '10%'}}>
+            <Typography variant='h5'>Filters</Typography>
+            <FormControlLabel
+              control={<Checkbox 
+                defaultChecked
+                onChange={e => {
+                  let temp = {...filters}
+                  temp.RG = e.target.checked
+                  setFilters(temp)
+                }}
+              />}
+              label="Rain Gauges"
+            />
+            <br/>
+            <FormControlLabel
+              control={<Checkbox 
+                defaultChecked
+                onChange={e => {
+                  let temp = {...filters}
+                  temp.SS = e.target.checked
+                  setFilters(temp)
+                }}
+              />}
+              label="Subsurface Sensors"
+            />
+            <br/>
+            <FormControlLabel
+              control={<Checkbox 
+                defaultChecked 
+                onChange={e => {
+                  let temp = {...filters}
+                  temp.SM = e.target.checked
+                  setFilters(temp)
+                }}
+              />}
+              label="Surficial Markers"
+            />
+          </Box>
         </FormGroup>
         <Divider />
-        <Typography>Map Type</Typography>
+        <br/>
+        <Typography variant='h5'>Map Type</Typography>
         <Button
           variant="contained"
           onClick={() => {

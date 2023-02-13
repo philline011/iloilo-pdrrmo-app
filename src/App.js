@@ -7,6 +7,7 @@ import {
 import {SnackbarProvider} from 'notistack';
 
 import Controls from './components/Controls';
+import Main from './components/Main';
 import Sidebar from './components/Sidebar';
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
       {/* <Sidebar /> */}
       <Router>
         <Routes>
-          <Route exact path="" element={<Sidebar />} />
+          <Route exact path="" element={<Main />} />
           <Route exact path="/controls" element={<Controls />} />
         </Routes>
       </Router>

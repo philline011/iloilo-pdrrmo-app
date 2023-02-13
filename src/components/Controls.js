@@ -80,14 +80,14 @@ const Controls = () => {
                                             style={{paddingTop: 20}}
                                         />
                                     </Grid>
-                                    <Grid>
+                                    {/* <Grid>
                                         <FormControlLabel
                                             control={<Switch color="primary" defaultChecked/>}
                                             label={<Typography variant="h5">DOST-ASTI Gauge</Typography>}
                                             labelPlacement="end"
                                             style={{paddingTop: 20}}
                                         />
-                                    </Grid>
+                                    </Grid> */}
                                     <Grid>
                                         <FormControlLabel
                                             control={<Switch color="primary" defaultChecked/>}
