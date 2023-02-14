@@ -23,7 +23,7 @@ import umingan_dummy from '../geojson/umingan_dummy.json'
 const { Overlay } = LayersControl;
 
 const Maps = (props) => {
-  const { mapType, sites, filters } = props;
+  const { mapType, sites, filters, zoomedLocation, zoom } = props;
   // const [mapType, setMapType] = useState('street')
   const screen_width = window.screen.width;
   const screen_height = window.screen.height;
@@ -91,6 +91,8 @@ const Maps = (props) => {
         }
       ).addTo(map);
     }
+    map.flyTo(zoomedLocation, zoom)
+    console.log(zoomedLocation)
 
     // loadSites(map)
 
