@@ -33,7 +33,7 @@ const Maps = (props) => {
   },[props])
 
   const loadSites = (map) => {
-    if(sites.LPA == true){
+    if(sites.LPA === true){
       console.log("lipata")
       L.geoJSON(lipata_dummy, {
         pointToLayer: function(feature, latlng){
@@ -44,7 +44,7 @@ const Maps = (props) => {
         }
       }).addTo(map)
     }
-    if(sites.MAR == true){
+    if(sites.MAR === true){
       console.log("marirong")
       L.geoJSON(marirong_dummy, {
         pointToLayer: function(feature, latlng){
@@ -55,7 +55,7 @@ const Maps = (props) => {
         }
       }).addTo(map)
     }
-    if(sites.UMI == true){
+    if(sites.UMI === true){
       console.log("umingan")
       L.geoJSON(umingan_dummy, {
         pointToLayer: function(feature, latlng){
@@ -77,12 +77,12 @@ const Maps = (props) => {
         L.popup().setLatLng([lat, lng]).setContent("andito ako").openOn(map);
       },
     });
-    if (mapType == "street") {
+    if (mapType === "street") {
       L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution:
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       }).addTo(map);
-    } else if (mapType == "terrain") {
+    } else if (mapType === "terrain") {
       L.tileLayer(
         "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
         {
@@ -122,14 +122,14 @@ const Maps = (props) => {
           zoom={9}
           style={{ height: "95vh", width: "100%" }}
         > 
-          {sites.LPA == true &&
+          {sites.LPA === true &&
           <GeoJSON key='lipata-layer' data={lipata_dummy} 
             pointToLayer={(feature) => {
               return renderMarker(feature)
             }}/>
           }
 
-          {sites.MAR == true &&
+          {sites.MAR === true &&
           <GeoJSON key='marirong-layer' data={marirong_dummy} 
             pointToLayer={(feature) => {
               return renderMarker(feature)
@@ -137,7 +137,7 @@ const Maps = (props) => {
           />
           }
 
-          {(sites.UMI == true) &&
+          {(sites.UMI === true) &&
           <GeoJSON key='umingan-layer' data={umingan_dummy} 
             pointToLayer={(feature) => {
               return renderMarker(feature)
@@ -153,14 +153,21 @@ const Maps = (props) => {
 };
 
 const rain_gauge = L.icon({
-  iconUrl: require('../markers/rain_gauge.png'),
+  iconUrl: require('../markers/raingauge.png'),
+  iconSize: [30,30]
+
+  
+})
+
+const earthquake = L.icon({
+  iconUrl: require('../markers/raingauge.png'),
   iconSize: [30,30]
 
   
 })
 
 const subsurface_sensor = L.icon({
-  iconUrl: require('../markers/subsurface_sensor.png'),
+  iconUrl: require('../markers/sensor2.png'),
   iconSize: [30,30]
   
 })
