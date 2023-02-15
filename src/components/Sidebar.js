@@ -58,19 +58,6 @@ const Sidebar = (props) => {
 
   return (
     <Fragment>
-      <Toolbar style={{ backgroundColor: "#16526D" }}>
-        <Header />
-        <IconButton
-          color="inherit"
-          aria-label="open drawer"
-          edge="end"
-          // onClick={handleDrawerOpen}
-          // sx={{ ...(open && { display: "none" }) }}
-        >
-          <MenuIcon style={{ color: "white" }} />
-        </IconButton>
-      </Toolbar>
-      <Divider />
       <div
         style={{
           zIndex: 1,
@@ -99,7 +86,7 @@ const Sidebar = (props) => {
             width: drawerWidth,
             borderWidth: 0,
             backgroundColor: "transparent",
-            marginTop: 13
+            marginTop: 20
           }
         }}
         variant="persistent"
