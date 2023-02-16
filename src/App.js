@@ -8,7 +8,7 @@ import {SnackbarProvider} from 'notistack';
 
 import Controls from './components/Controls';
 import Main from './components/Main';
-import Sidebar from './components/Sidebar';
+import TimelinePage from './components/TimelinePage';
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
         <Routes>
           <Route exact path="" element={<Main />} />
           <Route exact path="/controls" element={<Controls />} />
+          <Route exact path="/timeline" element={<TimelinePage />} />
         </Routes>
       </Router>
       
