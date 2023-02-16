@@ -8,15 +8,28 @@ import {SnackbarProvider} from 'notistack';
 
 import Controls from './components/Controls';
 import Main from './components/Main';
+
 import TimelinePage from './components/TimelinePage';
 
-function App() {
+import Header from './components/Header';
+import Login from './components/Login';
+
+
+const App = props => {
+  const AppHeader = () => {
+    let location = window.location.pathname;
+    if (location !== '/login' && location !== '/'){
+      return <Header/>
+    }
+  }
   return (
     <Fragment>
-      {/* <Sidebar /> */}
       <Router>
+        {AppHeader()}
         <Routes>
-          <Route exact path="" element={<Main />} />
+          <Route exact path="" element={<Login />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/main" element={<Main/>}/>
           <Route exact path="/controls" element={<Controls />} />
           <Route exact path="/timeline" element={<TimelinePage />} />
         </Routes>
@@ -26,5 +39,7 @@ function App() {
     
   );
 }
+
+  
 
 export default App;

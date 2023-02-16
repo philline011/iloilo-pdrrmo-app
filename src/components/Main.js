@@ -30,9 +30,12 @@ const Main = () => {
                 setFilters={setFilters}
             />
             <Sidebar
+                zoomedLocation={zoomedLocation}
                 setZoomedLocation={setZoomedLocation}
                 setZoom={setZoom}
-                zoom={zoom} />
+                sites={sites}
+                zoom={zoom}
+                />
             <Maps 
                 mapType={mapType} 
                 sites={sites}

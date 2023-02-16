@@ -9,21 +9,20 @@ import {
   Popup,
   MapConsumer,
   GeoJSON,
-  LayersControl, LayerGroup
+  LayersControl, LayerGroup, useMap
 } from "react-leaflet";
 import L from "leaflet";
 import hash from "object-hash";
 import { Button, Fab } from "@mui/material";
-import WidgetsRoundedIcon from "@mui/icons-material/WidgetsRounded";
-
 import lipata_dummy from '../geojson/lipata_dummy.json'
 import marirong_dummy from '../geojson/marirong_dummy.json'
 import umingan_dummy from '../geojson/umingan_dummy.json'
 
+
 const { Overlay } = LayersControl;
 
 const Maps = (props) => {
-  const { mapType, sites, filters, zoomedLocation, zoom } = props;
+  const { mapType, sites, filters, zoomedLocation, zoom, setZoomLevel } = props;
   // const [mapType, setMapType] = useState('street')
   const screen_width = window.screen.width;
   const screen_height = window.screen.height;
@@ -69,6 +68,7 @@ const Maps = (props) => {
   }
 
   function MyComponent() {
+
     const map = useMapEvents({
       click: (e) => {
         console.log(e);
@@ -92,8 +92,7 @@ const Maps = (props) => {
       ).addTo(map);
     }
     map.flyTo(zoomedLocation, zoom)
-    console.log(zoomedLocation)
-
+    
     // loadSites(map)
 
     return null;
