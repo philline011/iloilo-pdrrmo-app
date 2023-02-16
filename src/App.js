@@ -8,8 +8,12 @@ import {SnackbarProvider} from 'notistack';
 
 import Controls from './components/Controls';
 import Main from './components/Main';
+
+import TimelinePage from './components/TimelinePage';
+
 import Header from './components/Header';
 import Login from './components/Login';
+
 
 const App = props => {
   const AppHeader = () => {
@@ -27,6 +31,7 @@ const App = props => {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/main" element={<Main/>}/>
           <Route exact path="/controls" element={<Controls />} />
+          <Route exact path="/timeline" element={<TimelinePage />} />
         </Routes>
       </Router>
       
