@@ -30,11 +30,14 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { Button, Fab } from "@mui/material";
 import ContentPasteSearchIcon from '@mui/icons-material/ContentPasteSearch';
+import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import Header from "./Header";
 import Maps from "./Map";
 import mar_drone from '../assets/mar_drone.jpg';
 import umi_drone from '../assets/umi_drone.png';
 import TimelinePage from "./TimelinePage";
+import hazard_map_mar from '../assets/hazard_map_mar.jpg'
+import hazard_map_umi from '../assets/hazard_map_umi.jpg'
 
 const Sidebar = (props) => {
   const {zoomedLocation, setZoomedLocation, zoom, setZoom, sites} = props
@@ -65,7 +68,8 @@ const Sidebar = (props) => {
       three_day: 15,
       element_at_risk: '46 households (237 residents)',
       img: mar_drone,
-      location: {lat: 10.827102506839408, lng: 122.32185110449794}
+      location: {lat: 10.827102506839408, lng: 122.32185110449794},
+      hazard_map: hazard_map_mar
     },
     {
       id: 2,
@@ -78,7 +82,8 @@ const Sidebar = (props) => {
       three_day: 130,
       element_at_risk: '46 households (227 residents)',
       img: umi_drone,
-      location: {lat: 10.908841593121293, lng: 122.3277372121811}
+      location: {lat: 10.908841593121293, lng: 122.3277372121811},
+      hazard_map: hazard_map_umi
     }
   ]
 
@@ -215,13 +220,20 @@ const Sidebar = (props) => {
               <Typography variant="subtitle2">Elements at Risk: {dummyData[selectedSite].element_at_risk}</Typography>
             </CardContent>
             <CardActions sx={{justifyContent: 'flex-end'}}>
+              <Tooltip title="Download site hazard map">
+                <a href={dummyData[selectedSite].hazard_map} download style={{textDecoration: 'none'}}>
+                  <IconButton>
+                    <CloudDownloadIcon fontSize="large"/>
+                  </IconButton>
+                </a>
+              </Tooltip>
               <Tooltip title="Check site event history">
                 <IconButton 
                   onClick={() => {
                     handleOpenHistory()
                     setOpen(false)
                     }}>
-                  <ContentPasteSearchIcon fontSize="medium"/>
+                  <ContentPasteSearchIcon fontSize="large"/>
                 </IconButton>
               </Tooltip>
             </CardActions>
