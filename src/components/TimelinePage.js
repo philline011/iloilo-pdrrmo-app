@@ -1,12 +1,12 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { Grid, Card, Typography, Divider, Button, Fab, IconButton, Stack } from '@mui/material'
 import {Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent,
-    TimelineDot, TimelineOppositeContent} from '@mui/lab'
+    TimelineDot, TimelineOppositeContent, timelineOppositeContentClasses} from '@mui/lab'
 import { Link } from "react-router-dom";
 
 const TimelinePage = (props) => {
 
-    const {setOpenHistory, selectedSiteHistory}= props
+    const {setOpenHistory, selectedSiteHistory, setOpen}= props
 
     const dummyData = [
         {
@@ -46,14 +46,23 @@ const TimelinePage = (props) => {
                 <Link
                     component="button" 
                     style={{fontStyle: 'italic', fontSize: 16}}
-                    onClick={() => setOpenHistory(false)}>
+                    onClick={() => {
+                        setOpenHistory(false)
+                        setTimeout(() => {
+                            setOpen(true);
+                          }, 500)
+                    }}>
                         Close
                 </Link>
             </Grid>
             <Grid item xs={12} md={12} lg={12} sx={{margin: 5}}>
                 <Typography variant="h4" textAlign='center'>{selectedSiteHistory} Event History</Typography>
             </Grid>
-            <Timeline>
+            <Timeline sx={{
+                [`& .${timelineOppositeContentClasses.root}`]: {
+                flex: 0.2,
+                },
+            }}>
                 {dummyData.map(element => (
                     // console.log(element)
                     <TimelineItem>
@@ -61,12 +70,12 @@ const TimelinePage = (props) => {
                             {element.datetimestamp}
                         </TimelineOppositeContent>
                         <TimelineSeparator>
-                            <TimelineDot />
+                            <TimelineDot color="warning"/>
                             <TimelineConnector />
                         </TimelineSeparator>
                         <TimelineContent>
-                            <Card sx={{width: '80%', padding: 2}}>
-                                <Typography variant='h5'>{element.title}</Typography>
+                            <Card sx={{width: '80%', padding: 2, border: '1px solid black'}}>
+                                <Typography variant='h5' sx={{backgroundColor: '#16526D'}} color='white'>&nbsp;{element.title}</Typography>
                                 <Divider />
                                 <Typography variant="body"><b>Trigger:</b>{element.trigger}</Typography>
                                 <Typography variant="body2" textAlign='justify'>{lorem_ipsum}</Typography>
