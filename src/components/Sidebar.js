@@ -29,19 +29,23 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { Button, Fab } from "@mui/material";
-import FolderIcon from '@mui/icons-material/Folder';
+import ContentPasteSearchIcon from '@mui/icons-material/ContentPasteSearch';
 import Header from "./Header";
 import Maps from "./Map";
 import mar_drone from '../assets/mar_drone.jpg';
 import umi_drone from '../assets/umi_drone.png';
+import TimelinePage from "./TimelinePage";
 
 const Sidebar = (props) => {
   const {zoomedLocation, setZoomedLocation, zoom, setZoom, sites} = props
   const drawerWidth = 360;
   const cardWidth = 500;
+  const historyWidth = 600;
   const theme = useTheme();
   const [open, setOpen] = useState(true);
   const [openCard, setOpenCard] = useState(false);
+  const [openHistory, setOpenHistory] = useState(false);
+  const [selectedSiteHistory, setSelectedSiteHistory] = useState()
   const [selectedSite, setSelectedSite] = useState(1);
 
   const handleSelectedSite = (event, index) => {
@@ -96,6 +100,10 @@ const Sidebar = (props) => {
     setOpenCard(false);
   }
 
+  const handleOpenHistory = () => {
+    setOpenHistory(true);
+  }
+ 
   useEffect(() => {
     if (zoom === 9) {
       handleCardClose()
@@ -150,6 +158,7 @@ const Sidebar = (props) => {
                     handleSelectedSite(event, index)
                     setZoomedLocation(item.location)
                     handleCardClose()
+                    setSelectedSiteHistory(item.site)
                 }}>
                 <Card sx={{minWidth: 275, margin: 3, border: '2px solid black'}}>
                     <CardMedia
@@ -208,11 +217,33 @@ const Sidebar = (props) => {
             </CardContent>
             <CardActions sx={{justifyContent: 'flex-end'}}>
               <Tooltip title="Check site event history">
-                <IconButton>
-                  <FolderIcon style={{fontSize: "large"}}/>
+                <IconButton 
+                  onClick={() => {
+                    handleOpenHistory()
+                    setOpen(false)
+                    setOpen(true)
+                    }}>
+                  <ContentPasteSearchIcon fontSize="medium"/>
                 </IconButton>
               </Tooltip>
             </CardActions>
+        </Card>
+      </Drawer>
+      <Drawer
+        PaperProps={{
+          sx: {
+            width: historyWidth,
+            borderWidth: 0,
+            backgroundColor: "transparent",
+            marginTop: 20
+          }
+        }}
+        variant="persistent"
+        anchor="right"
+        open={openHistory}
+      >
+        <Card sx={{minWidth: 400, border: '2px solid black', overflow: 'visible'}}>
+          <TimelinePage setOpenHistory={setOpenHistory} selectedSiteHistory={selectedSiteHistory}/>
         </Card>
       </Drawer>
     </Fragment>

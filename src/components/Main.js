@@ -4,6 +4,7 @@ import { Grid, Typography } from '@mui/material'
 import Sidebar from "./Sidebar";
 import Maps from "./Map";
 import ControlButtons from "./ControlButtons";
+import TimelinePage from "./TimelinePage";
 
 const Main = () => {
 

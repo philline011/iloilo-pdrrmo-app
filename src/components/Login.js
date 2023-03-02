@@ -1,9 +1,10 @@
 import React, { Fragment, useState } from 'react';
-import { Grid, TextField, Typography, Button, Link } from '@mui/material';
+import { Grid, TextField, Typography, Button, Link, Card } from '@mui/material';
 import DOST_seal from '../assets/dost_seal.png';
 import Dynaslope_seal from '../assets/dynaslope_seal.png';
 import Province_seal from '../assets/iloilo_province_seal.png';
 import banner from '../assets/banner.png'
+import logo_gif from '../assets/Iloilo.gif'
 
 const Login = () => {
 
@@ -15,7 +16,7 @@ const Login = () => {
     }
 
     return (
-        <Fragment>
+        <Fragment> 
             <Grid container>
                 <Grid item xs={12} md={12} lg={12} sx={{margin: 10}}>
                     <div
@@ -25,7 +26,7 @@ const Login = () => {
                         width: '100%',
                      }}>
                         <img
-                          src={banner}
+                          src={logo_gif}
                           alt='mabangis-na-banner-png'
                           style={{
                             objectFit: 'contain',
@@ -95,11 +96,11 @@ const Login = () => {
                     </Grid>
                     <Grid item xs={12} sm={12} md={12}>
                         <Typography variant="subtitle2">
-                            This website is for ILOILO PDRRMO use only.
+                            This website is for ILOILO Provincial Government use only.
                         </Typography>
                     </Grid>
                 </Grid>
-                <Grid item xs={12} md={12} lg={12} sx={{margin: 10}}>
+                <Grid container xs={12} md={12} lg={12} textAlign='center' sx={{position: 'absolute', bottom: 60}}>
                     <div
                      style={{
                         textAlign: 'center',
@@ -111,8 +112,8 @@ const Login = () => {
                           alt='dost-seal-png'
                           style={{
                             objectFit:'contain',
-                            height: 50,
-                            width: 50,
+                            height: 60,
+                            width: 60,
                             marginRight: 25,
                           }}/>
                         <img
@@ -120,8 +121,8 @@ const Login = () => {
                           alt='dynaslope-seal-png'
                           style={{
                             objectFit:'contain',
-                            height: 50,
-                            width: 50,
+                            height: 60,
+                            width: 60,
                             marginRight: 25,
                           }}/>
                         <img
@@ -129,11 +130,18 @@ const Login = () => {
                         alt='ilo-province-seal-png'
                         style={{
                             objectFit:'contain',
-                            height: 50,
-                            width: 50,
+                            height: 60,
+                            width: 60,
                             marginRight: 25,
                         }}/> 
                     </div>
+                </Grid>
+                <Grid container textAlign="center" sx={{position: 'absolute', bottom: 20}}>
+                    <Grid item xs={12} sm={12} md={12}>
+                        <Typography variant="subtitle2">
+                        This site uses cookies to analyze non-identifiable web traffic data. DOST-PHIVOLCS is committed to protect and respect your personal data privacy in compliance with the Data Privacy Act of 2012.
+                        </Typography>
+                    </Grid>
                 </Grid>
             </Grid>
         </Fragment>
