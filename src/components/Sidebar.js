@@ -221,7 +221,6 @@ const Sidebar = (props) => {
                   onClick={() => {
                     handleOpenHistory()
                     setOpen(false)
-                    setOpen(true)
                     }}>
                   <ContentPasteSearchIcon fontSize="medium"/>
                 </IconButton>
@@ -243,7 +242,7 @@ const Sidebar = (props) => {
         open={openHistory}
       >
         <Card sx={{minWidth: 400, border: '2px solid black', overflow: 'visible'}}>
-          <TimelinePage setOpenHistory={setOpenHistory} selectedSiteHistory={selectedSiteHistory}/>
+          <TimelinePage setOpenHistory={setOpenHistory} selectedSiteHistory={selectedSiteHistory} setOpen={setOpen}/>
         </Card>
       </Drawer>
     </Fragment>
