@@ -152,7 +152,6 @@ const Sidebar = (props) => {
           <div sx={{marginLeft: 10}}>
             <ListItem>
                 <ListItemButton
-                  selected={selectedSite === 0} 
                   onClick={(event) =>{
                     setZoom(18)
                     handleSelectedSite(event, index)

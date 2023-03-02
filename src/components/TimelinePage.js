@@ -42,7 +42,7 @@ const TimelinePage = (props) => {
 
     return(
         <Grid container>
-            <Grid item xs={12} md={12} lg={12} sx={{margin: 5}}>
+            <Grid item xs={12} md={12} lg={12} sx={{marginTop: 5, marginLeft: 5}}>
                 <Link
                     component="button" 
                     style={{fontStyle: 'italic', fontSize: 16}}
@@ -55,7 +55,7 @@ const TimelinePage = (props) => {
                         Close
                 </Link>
             </Grid>
-            <Grid item xs={12} md={12} lg={12} sx={{margin: 5}}>
+            <Grid item xs={12} md={12} lg={12} sx={{marginTop: 5, marginBottom: 2}}>
                 <Typography variant="h4" textAlign='center'>{selectedSiteHistory} Event History</Typography>
             </Grid>
             <Timeline sx={{
