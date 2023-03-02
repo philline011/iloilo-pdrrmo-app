@@ -60,7 +60,7 @@ const TimelinePage = (props) => {
             </Grid>
             <Timeline sx={{
                 [`& .${timelineOppositeContentClasses.root}`]: {
-                flex: 0.2,
+                flex: 0.35,
                 },
             }}>
                 {dummyData.map(element => (

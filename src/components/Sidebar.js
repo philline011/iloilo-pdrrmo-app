@@ -233,14 +233,15 @@ const Sidebar = (props) => {
             width: historyWidth,
             borderWidth: 0,
             backgroundColor: "transparent",
-            marginTop: 20
+            marginTop: 17,
+            marginRight: 2
           }
         }}
         variant="persistent"
         anchor="right"
         open={openHistory}
       >
-        <Card sx={{minWidth: 400, border: '2px solid black', overflow: 'visible'}}>
+        <Card sx={{minWidth: 400, maxHeight: 800, border: '2px solid black', overflowY: 'scroll'}}>
           <TimelinePage setOpenHistory={setOpenHistory} selectedSiteHistory={selectedSiteHistory} setOpen={setOpen}/>
         </Card>
       </Drawer>
