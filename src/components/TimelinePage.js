@@ -2,10 +2,11 @@ import React, { Fragment, useState, useEffect } from "react";
 import { Grid, Card, Typography, Divider, Button, Fab, IconButton, Stack } from '@mui/material'
 import {Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent,
     TimelineDot, TimelineOppositeContent} from '@mui/lab'
+import { Link } from "react-router-dom";
 
-import Header from "./Header";
+const TimelinePage = (props) => {
 
-const TimelinePage = () => {
+    const {setOpenHistory, selectedSiteHistory}= props
 
     const dummyData = [
         {
@@ -40,10 +41,18 @@ const TimelinePage = () => {
 
 
     return(
-        <Grid>
-            <Header />
-            <br />
-            <Typography variant="h4" textAlign='center'>**Site** Event History</Typography>
+        <Grid container>
+            <Grid item xs={12} md={12} lg={12} sx={{margin: 5}}>
+                <Link
+                    component="button" 
+                    style={{fontStyle: 'italic', fontSize: 16}}
+                    onClick={() => setOpenHistory(false)}>
+                        Close
+                </Link>
+            </Grid>
+            <Grid item xs={12} md={12} lg={12} sx={{margin: 5}}>
+                <Typography variant="h4" textAlign='center'>{selectedSiteHistory} Event History</Typography>
+            </Grid>
             <Timeline>
                 {dummyData.map(element => (
                     // console.log(element)
@@ -56,7 +65,7 @@ const TimelinePage = () => {
                             <TimelineConnector />
                         </TimelineSeparator>
                         <TimelineContent>
-                            <Card sx={{width: '50%', padding: 2}}>
+                            <Card sx={{width: '80%', padding: 2}}>
                                 <Typography variant='h5'>{element.title}</Typography>
                                 <Divider />
                                 <Typography variant="body"><b>Trigger:</b>{element.trigger}</Typography>
