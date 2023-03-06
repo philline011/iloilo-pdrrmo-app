@@ -1,18 +1,24 @@
 import React, { Fragment, useState } from 'react';
-import { Grid, TextField, Typography, Button, Link, Card } from '@mui/material';
+import { Grid, TextField, Typography, Button, Link, Card, Dialog } from '@mui/material';
 import DOST_seal from '../assets/dost_seal.png';
 import Dynaslope_seal from '../assets/dynaslope_seal.png';
 import Province_seal from '../assets/iloilo_province_seal.png';
 import banner from '../assets/banner.png'
 import logo_gif from '../assets/Iloilo.gif'
+import SignUp from './SignUp';
 
 const Login = () => {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [openSignUp, setOpenSignUp] = useState(false);
 
     const handleLogin = () => {
         window.location.href = '/main';
+    }
+
+    const handleSignUp = () => {
+        setOpenSignUp(true)
     }
 
     return (
@@ -89,7 +95,7 @@ const Login = () => {
                         <Link
                         component="button" 
                         style={{fontStyle: 'italic', fontSize: 16}}
-                        onClick={e => console.log("Usto maggawa ng account ni accla oh")}
+                        onClick={e => handleSignUp()}
                         >
                         No account yet? Register here!
                         </Link>
@@ -143,6 +149,9 @@ const Login = () => {
                         </Typography>
                     </Grid>
                 </Grid>
+                <Dialog open={openSignUp}>
+                    <SignUp setOpenSignUp={setOpenSignUp}/>
+                </Dialog>
             </Grid>
         </Fragment>
     )
