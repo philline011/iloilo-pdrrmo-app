@@ -1,0 +1,169 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+            "site": "Boloc",
+            "function": "Hazard Map",
+            "site_code": "BLC",
+            "function_code": "HM"
+          },
+        "geometry": {
+          "coordinates": [
+            [
+              [
+                122.30887335609634,
+                10.826585989990576
+              ],
+              [
+                122.3086789086936,
+                10.82637060377779
+              ],
+              [
+                122.30849373888628,
+                10.826049292957123
+              ],
+              [
+                122.30836412002213,
+                10.825530951189904
+              ],
+              [
+                122.30875606278022,
+                10.825109608391315
+              ],
+              [
+                122.30928379672957,
+                10.825061108463032
+              ],
+              [
+                122.30975906590135,
+                10.825149014577718
+              ],
+              [
+                122.31024050740041,
+                10.825512763743106
+              ],
+              [
+                122.31115092561691,
+                10.825949262159995
+              ],
+              [
+                122.31141942183808,
+                10.826585821210315
+              ],
+              [
+                122.3108665280921,
+                10.827001102813853
+              ],
+              [
+                122.3104699807842,
+                10.827113849406743
+              ],
+              [
+                122.30938208455177,
+                10.826865294361056
+              ],
+              [
+                122.30887335609634,
+                10.826585989990576
+              ]
+            ]
+          ],
+          "type": "Polygon"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "site": "Boloc",
+            "function": "Rain Gauge",
+            "site_code": "BLC",
+            "function_code": "RG"
+          },
+        "geometry": {
+          "coordinates": [
+            122.31071041904511,
+            10.826628310162533
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "site": "Boloc",
+            "function": "Surficial Marker",
+            "site_code": "BLC",
+            "function_code": "SM"
+          },
+        "geometry": {
+          "coordinates": [
+            [
+              122.31018554039963,
+              10.826911889925697
+            ],
+            [
+              122.31039323478183,
+              10.826941639522147
+            ]
+          ],
+          "type": "LineString"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "site": "Boloc",
+            "function": "Surficial Marker",
+            "site_code": "BLC",
+            "function_code": "SM"
+          },
+        "geometry": {
+          "coordinates": [
+            [
+              122.31050863021221,
+              10.826579262898846
+            ],
+            [
+              122.31049564931408,
+              10.826371015410984
+            ]
+          ],
+          "type": "LineString"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "site": "Boloc",
+            "function": "Subsurface Sensor",
+            "site_code": "BLC",
+            "function_code": "SS"
+          },
+        "geometry": {
+          "coordinates": [
+            122.31026906848263,
+            10.826951305926002
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+            "site": "Boloc",
+            "function": "Subsurface Sensor",
+            "site_code": "BLC",
+            "function_code": "SS"
+          },
+        "geometry": {
+          "coordinates": [
+            122.31071041904511,
+            10.826628310162533
+          ],
+          "type": "Point"
+        }
+      }
+    ]
+  }

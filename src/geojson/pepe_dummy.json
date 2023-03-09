@@ -1,0 +1,181 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "site": "Pepe",
+          "function": "Hazard Map",
+          "site_code": "PEP",
+          "function_code": "HM"
+        },
+        "geometry": {
+          "coordinates": [
+            [
+                [
+                    122.33471621645668,
+                    10.79167629965383
+                  ],
+                  [
+                    122.3337489881688,
+                    10.792031985546288
+                  ],
+                  [
+                    122.33269138275386,
+                    10.791743270132699
+                  ],
+                  [
+                    122.33236413690236,
+                    10.791133838229044
+                  ],
+                  [
+                    122.33208461440461,
+                    10.7903636752647
+                  ],
+                  [
+                    122.33211188489145,
+                    10.789265352494098
+                  ],
+                  [
+                    122.33220051397666,
+                    10.788233996971869
+                  ],
+                  [
+                    122.3324186778762,
+                    10.787410249435439
+                  ],
+                  [
+                    122.3328209175682,
+                    10.78672044285166
+                  ],
+                  [
+                    122.33400036615762,
+                    10.786760625802941
+                  ],
+                  [
+                    122.33521390285398,
+                    10.786941449017021
+                  ],
+                  [
+                    122.33607974083645,
+                    10.787276306533485
+                  ],
+                  [
+                    122.33618882278626,
+                    10.787999597496153
+                  ],
+                  [
+                    122.3359979293736,
+                    10.788481790504377
+                  ],
+                  [
+                    122.33532980242825,
+                    10.789298838004484
+                  ],
+                  [
+                    122.33470258121213,
+                    10.790718620180357
+                  ],
+                  [
+                    122.33471621645668,
+                    10.79167629965383
+                  ]
+            ]
+          ],
+          "type": "Polygon"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "site": "Pepe",
+          "function": "Rain Gauge",
+          "site_code": "PEP",
+          "function_code": "RG"
+        },
+        "geometry": {
+          "coordinates": [
+            122.33421152593536,
+            10.787585401240733
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "site": "Pepe",
+          "function": "Subsurface Sensor",
+          "site_code": "PEP",
+          "function_code": "SS"
+        },
+        "geometry": {
+          "coordinates": [
+            122.3338012874691,
+            10.790828036700788
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "site": "Pepe",
+          "function": "Subsurface Sensor",
+          "site_code": "PEP",
+          "function_code": "SS"
+        },
+        "geometry": {
+          "coordinates": [
+            122.3337440448924,
+            10.789647196622653
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "site": "Marirong",
+          "function": "Surficial Marker",
+          "site_code": "MAR",
+          "function_code": "SM"
+        },
+        "geometry": {
+          "coordinates": [
+            [
+                122.33320024042501,
+                10.787482311073802
+            ],
+            [
+                122.3346408452673,
+                10.787913415061624
+            ]
+          ],
+          "type": "LineString"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "site": "Marirong",
+          "function": "Surficial Marker",
+          "site_code": "MAR",
+          "function_code": "SM"
+        },
+        "geometry": {
+          "coordinates": [
+            [
+                122.33289494668355,
+                10.789975208194193
+            ],
+            [
+                122.3342973898092,
+                10.790125156234026
+            ]
+          ],
+          "type": "LineString"
+        }
+      }
+    ]
+  }

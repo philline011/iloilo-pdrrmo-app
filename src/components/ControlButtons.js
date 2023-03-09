@@ -3,7 +3,7 @@ import { Grid, Typography, Button, Fab, IconButton, Stack } from '@mui/material'
 import Tooltip from '@mui/material/Tooltip';
 
 const ControlButtons = (props) => {
-    const { mapType, setMapType, filters, setFilters } = props 
+    const { mapType, setMapType, filters, setFilters, setZoom, setZoomedLocation, zoom } = props 
 
     return(
         <Grid>
@@ -74,6 +74,14 @@ const ControlButtons = (props) => {
                             <img src={require('../markers/earthquake.png')} style={{width: 25}}/>
                         </IconButton>
                     </Tooltip>
+                        <Button variant="contained"
+                                onClick={e => {
+                                setZoomedLocation({lat: 11.15405761270903, lng: 122.48382568359376})
+                                setZoom(9)
+                                }}
+                                sx={{margin: 9, backgroundColor: '#F8991D'}}>
+                                Reset zoom
+                        </Button>
                 </Stack>
             
             </Grid>

@@ -14,9 +14,11 @@ import {
 import L from "leaflet";
 import hash from "object-hash";
 import { Button, Fab } from "@mui/material";
-import lipata_dummy from '../geojson/lipata_dummy.json'
-import marirong_dummy from '../geojson/marirong_dummy.json'
-import umingan_dummy from '../geojson/umingan_dummy.json'
+import boloc_dummy from '../geojson/boloc_dummy.json';
+import marirong_dummy from '../geojson/marirong_dummy.json';
+import umingan_dummy from '../geojson/umingan_dummy.json';
+import pepe_dummy from '../geojson/pepe_dummy.json';
+import inabasan_dummy from '../geojson/inabasan_dummy.json';
 
 
 const { Overlay } = LayersControl;
@@ -32,9 +34,9 @@ const Maps = (props) => {
   },[props])
 
   const loadSites = (map) => {
-    if(sites.LPA === true){
-      console.log("lipata")
-      L.geoJSON(lipata_dummy, {
+    if(sites.BLC === true){
+      console.log("boloc")
+      L.geoJSON(boloc_dummy, {
         pointToLayer: function(feature, latlng){
           switch(feature.properties.function_code){
             case 'RG': return L.marker(latlng, {icon: rain_gauge});
@@ -57,6 +59,28 @@ const Maps = (props) => {
     if(sites.UMI === true){
       console.log("umingan")
       L.geoJSON(umingan_dummy, {
+        pointToLayer: function(feature, latlng){
+          switch(feature.properties.function_code){
+            case 'RG': return L.marker(latlng, {icon: rain_gauge});
+            case 'SS': return L.marker(latlng, {icon: subsurface_sensor});
+          }
+        }
+      }).addTo(map)
+    }
+    if(sites.PEP === true){
+      console.log("pepe")
+      L.geoJSON(pepe_dummy, {
+        pointToLayer: function(feature, latlng){
+          switch(feature.properties.function_code){
+            case 'RG': return L.marker(latlng, {icon: rain_gauge});
+            case 'SS': return L.marker(latlng, {icon: subsurface_sensor});
+          }
+        }
+      }).addTo(map)
+    }
+    if(sites.INA === true){
+      console.log("inabasan")
+      L.geoJSON(inabasan_dummy, {
         pointToLayer: function(feature, latlng){
           switch(feature.properties.function_code){
             case 'RG': return L.marker(latlng, {icon: rain_gauge});
@@ -121,8 +145,8 @@ const Maps = (props) => {
           zoom={9}
           style={{ height: "95vh", width: "100%" }}
         > 
-          {sites.LPA === true &&
-          <GeoJSON key='lipata-layer' data={lipata_dummy} 
+          {sites.BLC === true &&
+          <GeoJSON key='boloc-layer' data={boloc_dummy} 
             pointToLayer={(feature) => {
               return renderMarker(feature)
             }}/>
@@ -141,6 +165,20 @@ const Maps = (props) => {
             pointToLayer={(feature) => {
               return renderMarker(feature)
             }} />
+          }
+
+          {sites.PEP === true &&
+          <GeoJSON key='pepe-layer' data={pepe_dummy} 
+            pointToLayer={(feature) => {
+              return renderMarker(feature)
+            }}/>
+          }
+
+          {sites.INA === true &&
+          <GeoJSON key='inabasan-layer' data={inabasan_dummy} 
+            pointToLayer={(feature) => {
+              return renderMarker(feature)
+            }}/>
           }
 
           <MyComponent />

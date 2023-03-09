@@ -36,8 +36,11 @@ import Maps from "./Map";
 import mar_drone from '../assets/mar_drone.jpg';
 import umi_drone from '../assets/umi_drone.png';
 import TimelinePage from "./TimelinePage";
-import hazard_map_mar from '../assets/hazard_map_mar.jpg'
-import hazard_map_umi from '../assets/hazard_map_umi.jpg'
+import hazard_map_mar from '../assets/hazard_map_mar.jpg';
+import hazard_map_umi from '../assets/hazard_map_umi.jpg';
+import hazard_map_blc from '../assets/hazard_map_blc.jpg';
+import hazard_map_pep from '../assets/hazard_map_pep.jpg';
+import hazard_map_ina from '../assets/hazard_map_ina.jpg';
 
 const Sidebar = (props) => {
   const {zoomedLocation, setZoomedLocation, zoom, setZoom, sites} = props
@@ -84,8 +87,50 @@ const Sidebar = (props) => {
       img: umi_drone,
       location: {lat: 10.908841593121293, lng: 122.3277372121811},
       hazard_map: hazard_map_umi
+    },
+    {
+      id: 3,
+      site: 'BLC',
+      site_address: 'Brgy. Boloc, Tubungan, Iloilo',
+      alert_status: 0,
+      alert_info: '(Currently on routine monitoring)',
+      timestamp: '2023-02-14',
+      one_day: 0,
+      three_day: 130,
+      element_at_risk: '46 households (227 residents)',
+      img: umi_drone,
+      location: {lat: 10.826168878562344, lng: 122.309707403183},
+      hazard_map: hazard_map_blc
+    },
+    {
+      id: 4,
+      site: 'PEP',
+      site_address: 'Brgy. Pepe, Leon, Iloilo',
+      alert_status: 0,
+      alert_info: '(Currently on routine monitoring)',
+      timestamp: '2023-02-14',
+      one_day: 0,
+      three_day: 130,
+      element_at_risk: '46 households (227 residents)',
+      img: umi_drone,
+      location: {lat: 10.789196712779255, lng: 122.33391165733337},
+      hazard_map: hazard_map_pep
+    },
+    {
+      id: 5,
+      site: 'INA',
+      site_address: 'Sitio Sambag, Brgy. Inabasan, Maasin, Iloilo',
+      alert_status: 2,
+      alert_info: '(Surficial trigger)',
+      timestamp: '2023-02-14',
+      one_day: 0,
+      three_day: 130,
+      element_at_risk: '46 households (227 residents)',
+      img: umi_drone,
+      location: {lat: 10.869111952702008, lng: 122.43642466556223},
+      hazard_map: hazard_map_ina
     }
-  ]
+  ];
 
   const handleDrawerOpen = () => {
     setOpen(!open);
@@ -145,16 +190,18 @@ const Sidebar = (props) => {
             width: drawerWidth,
             borderWidth: 0,
             backgroundColor: "transparent",
-            marginTop: 20
+            marginTop: 20,
           }
         }}
         variant="persistent"
         anchor="right"
         open={open}
       >
-        <List>
+        <List 
+          sx={{overflowY: 'scroll', marginBottom: 25}}
+        >
         {dummyData.map((item, index) => (
-          <div sx={{marginLeft: 10}}>
+          <div sx={{marginLeft: 10}} key={item.id}>
             <ListItem>
                 <ListItemButton
                   onClick={(event) =>{
@@ -181,14 +228,6 @@ const Sidebar = (props) => {
           </div>   
         ))}
         </List>
-          <Button variant="contained"
-            onClick={e => {
-              setZoomedLocation({lat: 11.15405761270903, lng: 122.48382568359376})
-              setZoom(9)
-            }}
-            sx={{margin: 9}}>
-            Reset zoom
-          </Button>
       </Drawer>
       <Drawer
           PaperProps={{
