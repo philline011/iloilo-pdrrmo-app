@@ -23,6 +23,7 @@ import {
   List,
   ListItem,
   ListItemButton,
+  Chip,
 } from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -64,8 +65,8 @@ const Sidebar = (props) => {
       id: 1,
       site: 'MAR',
       site_address: 'Brgy. Marirong, Leon, Iloilo',
-      alert_status: 0,
-      alert_info: '(Currently on routine monitoring)',
+      alert_status: 3,
+      alert_info: 'Subsurface trigger: Landslide sensor MARTB detected critical movement on nodes 5, 6, 8, 17, 18 and 19',
       timestamp: '2023-02-16',
       one_day: 0,
       three_day: 15,
@@ -79,7 +80,7 @@ const Sidebar = (props) => {
       site: 'UMI',
       site_address: 'Brgy. Umingan, Alimodian, Iloilo',
       alert_status: 1,
-      alert_info: '(Rainfall trigger)',
+      alert_info: 'Rainfall trigger: one-day cumulative value exceeded threshold',
       timestamp: '2023-02-14',
       one_day: 67.6,
       three_day: 130,
@@ -93,7 +94,7 @@ const Sidebar = (props) => {
       site: 'BLC',
       site_address: 'Brgy. Boloc, Tubungan, Iloilo',
       alert_status: 0,
-      alert_info: '(Currently on routine monitoring)',
+      alert_info: 'Currently on routine monitoring',
       timestamp: '2023-02-14',
       one_day: 0,
       three_day: 130,
@@ -107,7 +108,7 @@ const Sidebar = (props) => {
       site: 'PEP',
       site_address: 'Brgy. Pepe, Leon, Iloilo',
       alert_status: 0,
-      alert_info: '(Currently on routine monitoring)',
+      alert_info: 'Currently on routine monitoring',
       timestamp: '2023-02-14',
       one_day: 0,
       three_day: 130,
@@ -121,7 +122,7 @@ const Sidebar = (props) => {
       site: 'INA',
       site_address: 'Sitio Sambag, Brgy. Inabasan, Maasin, Iloilo',
       alert_status: 2,
-      alert_info: '(Surficial trigger)',
+      alert_info: 'Surficial trigger: Marker A with significant displacement of 10cm/day',
       timestamp: '2023-02-14',
       one_day: 0,
       three_day: 130,
@@ -131,6 +132,7 @@ const Sidebar = (props) => {
       hazard_map: hazard_map_ina
     }
   ];
+  const dummyAlertSort = [...dummyData].sort((a, b) => b.alert_status - a.alert_status);
 
   const handleDrawerOpen = () => {
     setOpen(!open);
@@ -200,7 +202,7 @@ const Sidebar = (props) => {
         <List 
           sx={{overflowY: 'scroll', marginBottom: 25}}
         >
-        {dummyData.map((item, index) => (
+        {dummyAlertSort.map((item, index) => (
           <div sx={{marginLeft: 10}} key={item.id}>
             <ListItem>
                 <ListItemButton
@@ -211,16 +213,39 @@ const Sidebar = (props) => {
                     handleCardClose()
                     setSelectedSiteHistory(item.site)
                 }}>
-                <Card sx={{minWidth: 275, margin: 3, border: '2px solid black'}}>
+                <Card sx={{minWidth: 275, margin: 1, border: '2px solid black'}}>
                     <CardMedia
                       sx={{ height: 100 }}
                       image={item.img}
                       title="drone shot"
                     />
                     <CardContent>
-                      <Typography variant="h5"><b>{item.site}</b></Typography>
+                      <Grid container>
+                        <Grid item xs={8}>
+                          <Typography variant="h5"><b>{item.site}</b></Typography>
+                        </Grid>
+                        <Grid item xs={4}>
+
+                          {item.alert_status === 0 && (
+                            <Chip label= "Alert 0"/>
+                          )}
+
+                          {item.alert_status === 1 && (
+                            <Chip label= "Alert 1" sx={{backgroundColor: "#FCEE27"}}/>
+                          )}
+
+                          {item.alert_status === 2 && (
+                            <Chip label= "Alert 2" sx={{backgroundColor: "#F8991D"}}/>
+                          )}
+
+                          {item.alert_status === 3 && (
+                            <Chip label= "Alert 3" sx={{backgroundColor: "#ed2939"}}/>
+                          )}
+                  
+                        </Grid>
+                      </Grid>
                       <Typography variant="subtitle1">{item.site_address}</Typography>
-                      <Typography variant="subtitle2">Alert status: {item.alert_status} {item.alert_info}</Typography>
+                      <Typography variant="subtitle2">{item.alert_info}</Typography>
                     </CardContent>
                 </Card>
                 </ListItemButton>
