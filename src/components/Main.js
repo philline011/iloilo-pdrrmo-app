@@ -12,9 +12,11 @@ const Main = () => {
     const [zoom, setZoom] = useState(9)
     const [mapType, setMapType] = useState("street");
     const [sites, setSites] = useState({
-        LPA: true,
+        BLC: true,
         MAR: true,
-        UMI: true
+        UMI: true,
+        PEP: true,
+        INA: true,
     })
     const [filters, setFilters] = useState({
         RG: true,
@@ -29,6 +31,9 @@ const Main = () => {
                 setMapType={setMapType}
                 filters={filters}
                 setFilters={setFilters}
+                setZoomedLocation={setZoomedLocation}
+                setZoom={setZoom}
+                zoom={zoom}
             />
             <Sidebar
                 zoomedLocation={zoomedLocation}

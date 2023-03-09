@@ -1,0 +1,213 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "site": "Inabasan",
+          "function": "Hazard Map",
+          "site_code": "INA",
+          "function_code": "HM"
+        },
+        "geometry": {
+          "coordinates": [
+            [
+                [
+                    122.43471867049249,
+                    10.870793873581164
+                  ],
+                  [
+                    122.43445602318428,
+                    10.870524100317724
+                  ],
+                  [
+                    122.43433192400681,
+                    10.86990255080579
+                  ],
+                  [
+                    122.43498796517042,
+                    10.86924408996353
+                  ],
+                  [
+                    122.43484073063951,
+                    10.868622885969728
+                  ],
+                  [
+                    122.43506410916166,
+                    10.868074456503209
+                  ],
+                  [
+                    122.43514229181866,
+                    10.867595668178673
+                  ],
+                  [
+                    122.43544704392355,
+                    10.86725903607315
+                  ],
+                  [
+                    122.4359203935378,
+                    10.866930151113195
+                  ],
+                  [
+                    122.43658494460266,
+                    10.866876439492884
+                  ],
+                  [
+                    122.43744681331856,
+                    10.867160405192124
+                  ],
+                  [
+                    122.43784393064652,
+                    10.86781661776071
+                  ],
+                  [
+                    122.43783001417017,
+                    10.868261716621106
+                  ],
+                  [
+                    122.43794888337379,
+                    10.869097008480011
+                  ],
+                  [
+                    122.4378487173293,
+                    10.86989866975351
+                  ],
+                  [
+                    122.43764379883476,
+                    10.87052617124155
+                  ],
+                  [
+                    122.43742830936827,
+                    10.870969002853357
+                  ],
+                  [
+                    122.43677900459761,
+                    10.871241038877926
+                  ],
+                  [
+                    122.43601065333007,
+                    10.871123606559323
+                  ],
+                  [
+                    122.43522182568415,
+                    10.871058056559718
+                  ],
+                  [
+                    122.43471867049249,
+                    10.870793873581164
+                  ]
+            ]
+          ],
+          "type": "Polygon"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "site": "Inabasan",
+          "function": "Rain Gauge",
+          "site_code": "INA",
+          "function_code": "RG"
+        },
+        "geometry": {
+          "coordinates": [
+            122.43669012414875,
+            10.870664238928882
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "site": "Inabasan",
+          "function": "Surficial Marker",
+          "site_code": "INA",
+          "function_code": "SM"
+        },
+        "geometry": {
+          "coordinates": [
+            [
+              122.32198301140534,
+              10.826970800305034
+            ],
+            [
+              122.3220850427565,
+              10.826925419885967
+            ]
+          ],
+          "type": "LineString"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "site": "Inabasan",
+          "function": "Surficial Marker",
+          "site_code": "INA",
+          "function_code": "SM"
+        },
+        "geometry": {
+          "coordinates": [
+            [
+              122.32239306193094,
+              10.826823313915256
+            ],
+            [
+              122.32254514639772,
+              10.826851676687653
+            ]
+          ],
+          "type": "LineString"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "site": "Inabasan",
+          "function": "Subsurface Sensor",
+          "site_code": "INA",
+          "function_code": "SS"
+        },
+        "geometry": {
+          "coordinates": [
+            122.43669012414875,
+            10.870664238928882
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "site": "Inabasan",
+          "function": "Subsurface Sensor",
+          "site_code": "INA",
+          "function_code": "SS"
+        },
+        "geometry": {
+          "coordinates": [
+            122.43713688119283,
+            10.86784897623194
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "site": "Inabasan",
+          "function": "Subsurface Sensor",
+          "site_code": "INA",
+          "function_code": "SS"
+        },
+        "geometry": {
+          "coordinates": [
+            122.43593311915731,
+            10.86894583498676
+          ],
+          "type": "Point"
+        }
+      }
+    ]
+  }
