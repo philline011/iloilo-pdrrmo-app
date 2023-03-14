@@ -24,6 +24,10 @@ const Main = () => {
         EQ: true
     })
 
+    useEffect(()=> {
+        console.log(filters)
+      },[filters])
+
     return(
         <Grid>
             <ControlButtons 

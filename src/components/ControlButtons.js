@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { Grid, Typography, Button, Fab, IconButton, Stack } from '@mui/material'
 import Tooltip from '@mui/material/Tooltip';
+import datalogger_rg from '../assets/datalogger_w_rg.png'
 
 const ControlButtons = (props) => {
     const { mapType, setMapType, filters, setFilters, setZoom, setZoomedLocation, zoom } = props 
@@ -45,7 +46,7 @@ const ControlButtons = (props) => {
                         <IconButton style={{backgroundColor: filters.SS === true ? '#F8991D': '#16526D'}}
                             onClick={( )=> {
                                 let tempFilters = {...filters}
-                                if(filters.SS===true){
+                                if(filters.SS === true){
                                     tempFilters.SS = false
                                 }
                                 else{
@@ -54,7 +55,7 @@ const ControlButtons = (props) => {
                                 setFilters(tempFilters)
                             }}
                         >
-                            <img src={require('../markers/sensor2.png')} style={{width: 25}}/>
+                            <img src={datalogger_rg} alt='datalogger' style={{width: 25, height: 25}}/>
                         </IconButton>
                     </Tooltip>
 

@@ -1,19 +1,12 @@
 import React, { Fragment, useState, useEffect } from "react";
 import "leaflet/dist/leaflet.css";
-import Leaflet, { Map } from "leaflet";
 import {
   MapContainer,
-  TileLayer,
   useMapEvents,
-  Marker,
-  Popup,
-  MapConsumer,
   GeoJSON,
-  LayersControl, LayerGroup, useMap
+  LayersControl,
 } from "react-leaflet";
 import L from "leaflet";
-import hash from "object-hash";
-import { Button, Fab } from "@mui/material";
 import boloc_dummy from '../geojson/boloc_dummy.json';
 import marirong_dummy from '../geojson/marirong_dummy.json';
 import umingan_dummy from '../geojson/umingan_dummy.json';
@@ -52,6 +45,7 @@ const Maps = (props) => {
           switch(feature.properties.function_code){
             case 'RG': return L.marker(latlng, {icon: rain_gauge});
             case 'SS': return L.marker(latlng, {icon: subsurface_sensor});
+            default : return;
           }
         }
       }).addTo(map)
@@ -63,6 +57,7 @@ const Maps = (props) => {
           switch(feature.properties.function_code){
             case 'RG': return L.marker(latlng, {icon: rain_gauge});
             case 'SS': return L.marker(latlng, {icon: subsurface_sensor});
+            default : return;
           }
         }
       }).addTo(map)
@@ -74,6 +69,7 @@ const Maps = (props) => {
           switch(feature.properties.function_code){
             case 'RG': return L.marker(latlng, {icon: rain_gauge});
             case 'SS': return L.marker(latlng, {icon: subsurface_sensor});
+            default : return;
           }
         }
       }).addTo(map)
@@ -85,6 +81,7 @@ const Maps = (props) => {
           switch(feature.properties.function_code){
             case 'RG': return L.marker(latlng, {icon: rain_gauge});
             case 'SS': return L.marker(latlng, {icon: subsurface_sensor});
+            default : return;
           }
         }
       }).addTo(map)
@@ -126,6 +123,7 @@ const Maps = (props) => {
     switch(feature.properties.function_code){
       case 'RG': return L.marker([feature.geometry.coordinates[1],feature.geometry.coordinates[0]], {icon: rain_gauge});
       case 'SS': return L.marker([feature.geometry.coordinates[1],feature.geometry.coordinates[0]], {icon: subsurface_sensor});
+      default : return;
     }
   }
 
@@ -204,9 +202,8 @@ const earthquake = L.icon({
 })
 
 const subsurface_sensor = L.icon({
-  iconUrl: require('../markers/sensor2.png'),
-  iconSize: [30,30]
-  
+  iconUrl: require('../assets/datalogger_w_rg.png'),
+  iconSize: [40,40]
 })
 
 export default Maps;
